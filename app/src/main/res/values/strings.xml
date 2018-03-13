@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GuessingGame</string>
+    <string name="directions">I have generated a random integer between 1 and 100. You have five chances to guess what it is. \n\nPress PLAY to begin.</string>
 </resources>
