@@ -52,10 +52,9 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int userGuess = Integer.parseInt(guess.getText().toString()); //we have to parse everything to integer from string input
                 if ((userGuess < 0 || userGuess > 100) && (generatedNumber < 5)) {
-//            System.out.println("Entry outside the specified range of [1,100].");
-
                     clueTextview.setText("Enter a number between 1 - 100");
                     clueTextview.setVisibility(View.VISIBLE);
+                    guess.setText("");
                 }
                 checkGuess(userGuess);
             }
@@ -65,28 +64,37 @@ public class GameActivity extends AppCompatActivity {
     private void checkGuess(int userGuess) { //parameter prevents method from running without any input from user
 
         do{
-        if ((userGuess < 0 || userGuess > 100) && (generatedNumber < 5)) {
-//            System.out.println("Entry outside the specified range of [1,100].");
-        }
+
         //too low
         if ((userGuess < generatedNumber) && (numberOfGuesses < 5)) {
-//            System.out.println("Too low! Enter your guess: ");
+            clueTextview.setText("TOO LOW! Try again!");
+            clueTextview.setVisibility(View.VISIBLE);
+            guess.setText("");
         }
+
         //too high
         if ((userGuess > generatedNumber) && (numberOfGuesses < 5)) {
-//            System.out.println("Too high! Enter your guess: ");
+            clueTextview.setText("TOO HIGH! Try again!");
+            clueTextview.setVisibility(View.VISIBLE);
+            guess.setText("");
         }
         numberOfGuesses++; //add one to guess # count variable
+
     } while ((userGuess != generatedNumber) && (userGuess < 6));
+
     //guesses correctly. winner.
-
-
             if (userGuess == generatedNumber) {
-//        System.out.println("CONGRATULATIONS! " + userGuess + " is the correct integer.");
+                //TODO - Create intent to go to winning activity method; get rid of filler code
+                clueTextview.setText("WINNER!");
+                clueTextview.setVisibility(View.VISIBLE);
+                guess.setText("");
     } else {
-        //exceeds alloted # guesses. loses game.
-//        System.out.println("\nSorry, you have exceeded five guesses without guessing correctly.");
-//        System.out.println("The correct integer was " + generatedNumber + ".");
+                clueTextview.setText("out of guesses");
+                clueTextview.setVisibility(View.VISIBLE);
+                guess.setText("");
+                //exceeds alloted # guesses. loses game.
+                //TODO - create intent to go to winning activity method - handle running out of chances; get rid of filler code
+
     }
     }
 
