@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
     private void startGame(){
         Intent playGame = new Intent(this, GameActivity.class); //this class needs to change from what it is to the game class. it still
         //doesn't know what it needs to do until I tell it what my intent to do is.
+        //PUTTING EXTRAS - have to tell what or where, and give value
+//        playGame.putExtra("SETWHICHVIEW", 3);
         startActivity(playGame);
+        GameActivity gameActivity = new GameActivity();
     }
 }
