@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.alexandrareinhart.guessinggame.GameActivity">
+    tools:context="com.example.alexandrareinhart.guessinggame.GameActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <EditText
         android:id="@+id/user_guess_editText"
         android:layout_width="141dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="100dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="136dp"
         android:ems="10"
         android:hint="@string/_1_100"
         android:inputType="number"
@@ -21,33 +20,32 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/submit_guess_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clue_textview" />
 
     <TextView
         android:id="@+id/guess_directions_textview"
-        android:layout_width="343dp"
-        android:layout_height="61dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="serif-monospace"
         android:text="@string/guess_a_number"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/clue_textview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/clue_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="210dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="17dp"
         android:fontFamily="serif-monospace"
         android:text="@string/too_low"
         android:textAlignment="center"
@@ -57,14 +55,13 @@
         app:layout_constraintBottom_toTopOf="@+id/user_guess_editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guess_directions_textview"
-        app:layout_constraintVertical_bias="0.845" />
+        app:layout_constraintTop_toBottomOf="@+id/guess_directions_textview" />
 
     <Button
         android:id="@+id/submit_guess_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@android:color/holo_green_dark"
@@ -74,5 +71,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_guess_editText" />
 </android.support.constraint.ConstraintLayout>
