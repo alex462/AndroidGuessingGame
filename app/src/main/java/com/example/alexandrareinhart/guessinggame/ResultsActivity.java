@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class ResultsActivity extends AppCompatActivity {
 
     private Button playAgainButton;
-    private TextView correctNumber;
+    private TextView correctNumberTextview;
     private TextView winOrLoseResultTextview;
     private ImageView winOrLoseResultImageview;
     protected Intent intent;
@@ -22,7 +22,7 @@ public class ResultsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_results);
 
         playAgainButton = findViewById(R.id.play_again_button);
-        correctNumber = findViewById(R.id.generated_number_textview);
+        correctNumberTextview = findViewById(R.id.correct_number_textview);
         winOrLoseResultTextview = findViewById(R.id.results_output_textview);
         winOrLoseResultImageview = findViewById(R.id.winner_imageview);
 
@@ -40,9 +40,10 @@ public class ResultsActivity extends AppCompatActivity {
 
     private void setLosingData() {
         int actualNumber = intent.getIntExtra("ACTUAL_NUMBER", 0);
-//        actual_number =
         winOrLoseResultTextview.setText(R.string.lost_message);
-        correctNumber.setText(getString(R.string.winning_number, actualNumber));
+        correctNumberTextview.setText(getString(R.string.winning_number, actualNumber));
+        correctNumberTextview.setVisibility(View.VISIBLE);
+
         winOrLoseResultTextview.setVisibility(View.VISIBLE);
 
         winOrLoseResultImageview.setImageDrawable(getDrawable(R.drawable.losing_sad_face));

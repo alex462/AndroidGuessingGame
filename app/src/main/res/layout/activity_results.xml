@@ -39,12 +39,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/generated_number_textview"
+        android:id="@+id/correct_number_textview"
         android:layout_width="178dp"
         android:layout_height="68dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/you_win_message"
         android:fontFamily="serif-monospace"
         android:text="@string/winning_number"
         android:textAlignment="center"
@@ -63,9 +64,10 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/winning_face_image"
         app:layout_constraintBottom_toTopOf="@+id/play_again_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/generated_number_textview"
+        app:layout_constraintTop_toBottomOf="@+id/correct_number_textview"
         app:srcCompat="@drawable/winning_thumbs_up" />
 </android.support.constraint.ConstraintLayout>
