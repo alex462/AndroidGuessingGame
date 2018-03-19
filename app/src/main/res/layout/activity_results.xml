@@ -16,7 +16,7 @@
         android:layout_marginStart="8dp"
         android:background="@android:color/holo_green_dark"
         android:fontFamily="serif-monospace"
-        android:text="play again!"
+        android:text="@string/play_again_message"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"

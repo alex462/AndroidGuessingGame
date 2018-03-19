@@ -1,5 +1,6 @@
 package com.example.alexandrareinhart.guessinggame;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ public class ResultsActivity extends AppCompatActivity {
     private TextView correctNumber;
     private TextView winOrLoseResultTextview;
     private ImageView winOrLoseResultImageview;
+    protected Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,27 @@ public class ResultsActivity extends AppCompatActivity {
         winOrLoseResultImageview = findViewById(R.id.winner_imageview);
 
         setListener();
+
+        intent = getIntent();
+        if(intent.hasExtra("ACTUAL_NUMBER")){
+            setLosingData();
+        }
+        else{
+            winner();
+        }
+
     }
+
+    private void setLosingData() {
+        int actualNumber = intent.getIntExtra("ACTUAL_NUMBER", 0);
+//        actual_number =
+        winOrLoseResultTextview.setText(R.string.lost_message);
+        correctNumber.setText(getString(R.string.winning_number, actualNumber));
+        winOrLoseResultTextview.setVisibility(View.VISIBLE);
+
+        winOrLoseResultImageview.setImageDrawable(getDrawable(R.drawable.losing_sad_face));
+    }
+
 
     private void setListener() {
         playAgainButton.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +57,12 @@ public class ResultsActivity extends AppCompatActivity {
             }
         });
     }
+
+    protected void winner(){
+        winOrLoseResultTextview.setText(R.string.you_win_message);
+        winOrLoseResultTextview.setVisibility(View.VISIBLE);
+    }
+
 
 
 }

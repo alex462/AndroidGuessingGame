@@ -9,6 +9,9 @@
     <string name="outside_range_message">Enter a number between 1 - 100</string>
     <string name="too_low_message">TOO LOW! Try again!</string>
     <string name="too_high_message">TOO HIGH! Try again!</string>
-    <string name="winning_number">The winning number was %1$i</string>
+    <string name="winning_number">The winning number was %1$d</string>
     <string name="winner_textview">CORRECT! You win!</string>
+    <string name="play_again_message">play again!</string>
+    <string name="lost_message">YOU LOST!</string>
+    <string name="you_win_message">YOU WON!</string>
 </resources>
