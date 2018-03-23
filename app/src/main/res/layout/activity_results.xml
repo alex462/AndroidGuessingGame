@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blue_question_mark"
     tools:context="com.example.alexandrareinhart.guessinggame.ResultsActivity"
     tools:layout_editor_absoluteY="81dp">
 
@@ -14,7 +15,6 @@
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="@android:color/holo_green_dark"
         android:fontFamily="serif-monospace"
         android:text="@string/play_again_message"
         android:textAlignment="center"
@@ -32,6 +32,7 @@
         android:fontFamily="serif-monospace"
         android:text="@string/winner_textview"
         android:textAlignment="center"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +50,7 @@
         android:fontFamily="serif-monospace"
         android:text="@string/winning_number"
         android:textAlignment="center"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         android:visibility="invisible"
