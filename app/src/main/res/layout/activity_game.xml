@@ -62,6 +62,7 @@
 
     <Button
         android:id="@+id/submit_guess_button"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="232dp"

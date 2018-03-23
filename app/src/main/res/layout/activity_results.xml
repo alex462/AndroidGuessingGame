@@ -10,13 +10,14 @@
 
     <Button
         android:id="@+id/play_again_button"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:fontFamily="serif-monospace"
-        android:text="@string/play_again_message"
+        android:text="@string/play_again"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
