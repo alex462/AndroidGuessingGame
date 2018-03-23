@@ -3,7 +3,9 @@ package com.example.alexandrareinhart.guessinggame;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -52,20 +54,35 @@ public class GameActivity extends AppCompatActivity {
 
     private void setListener(){
         guessButton.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
-//                try {
+
                     int userGuess = Integer.parseInt(guess.getText().toString()); //we have to parse everything to integer from string input
                     if ((userGuess < 0 || userGuess > 100) && (generatedNumber < 5)) {
                         clueTextview.setText(R.string.outside_range_message);
                         clueTextview.setVisibility(View.VISIBLE);
                         guess.setText("");
+
                     }
-//                }catch(Exception ime){
+                    checkGuess(userGuess);
+                }
 
 
-                checkGuess(userGuess);
-            }
+//                guessButton.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//                    @Override
+//                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//                        if (actionId == EditorInfo.IME_ACTION_DONE) {
+//
+//
+//                        }
+//                        return true;
+//                    }
+//                });
+
+
+
         });
     }
 

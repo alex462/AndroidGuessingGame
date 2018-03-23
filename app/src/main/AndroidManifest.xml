@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".GameActivity" />
+        android:windowSoftInputMode="stateUnchanged">
         android:screenOrientation="portrait">
         <activity android:name=".ResultsActivity"></activity>
         android:screenOrientation="portrait">
