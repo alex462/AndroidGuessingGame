@@ -6,7 +6,7 @@
     <string name="too_low">Too Low!</string>
     <string name="submit_guess">SUBMIT GUESS</string>
     <string name="play">PLAY</string>
-    <string name="outside_range_message" tools:ignore="TypographyDashes">Enter a number between 1 - 100</string>
+    <string name="outside_range_message" tools:ignore="TypographyDashes">Entry ignored.\nEnter a number between 1 - 100</string>
     <string name="too_low_message">TOO LOW! Try again!</string>
     <string name="too_high_message">TOO HIGH! Try again!</string>
     <string name="winning_number">The winning number was %1$d</string>

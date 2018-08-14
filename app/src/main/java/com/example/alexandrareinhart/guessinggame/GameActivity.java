@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -48,13 +49,13 @@ public class GameActivity extends AppCompatActivity {
         guessButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int userGuess = Integer.parseInt(guess.getText().toString()); //we have to parse everything to integer from string input
-                if ((userGuess < 0 || userGuess > 100) && (generatedNumber < 5)) {
-                    clueTextview.setText(R.string.outside_range_message);
-                    clueTextview.setVisibility(View.VISIBLE);
-                    guess.setText("");
+                if (guess.getText().toString().isEmpty()) {
+                    Toast.makeText(GameActivity.this, "I can't read your mind.", Toast.LENGTH_SHORT).show();
+                    guess.requestFocus();
+                } else {
+                    int userGuess = Integer.parseInt(guess.getText().toString()); //we have to parse everything to integer from string input
+                    checkGuess(userGuess);
                 }
-                checkGuess(userGuess);
             }
         });
     }
@@ -74,6 +75,11 @@ public class GameActivity extends AppCompatActivity {
             guess.setText("");
             guess.requestFocus();
             numberOfGuesses++;
+        } else if (userGuess > 100) {
+            clueTextview.setText(R.string.outside_range_message);
+            clueTextview.setVisibility(View.VISIBLE);
+            guess.setText("");
+            guess.requestFocus();
         } else if (userGuess > generatedNumber) {
             clueTextview.setText(R.string.too_high_message);
             clueTextview.setVisibility(View.VISIBLE);
