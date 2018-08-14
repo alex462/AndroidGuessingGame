@@ -35,7 +35,6 @@ public class ResultsActivity extends AppCompatActivity {
         else{
             winner();
         }
-
     }
 
     private void setLosingData() {
@@ -43,12 +42,9 @@ public class ResultsActivity extends AppCompatActivity {
         winOrLoseResultTextview.setText(R.string.lost_message);
         correctNumberTextview.setText(getString(R.string.winning_number, actualNumber));
         correctNumberTextview.setVisibility(View.VISIBLE);
-
         winOrLoseResultTextview.setVisibility(View.VISIBLE);
-
         winOrLoseResultImageview.setImageDrawable(getDrawable(R.drawable.losing_sad_face));
     }
-
 
     private void setListener() {
         playAgainButton.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +59,4 @@ public class ResultsActivity extends AppCompatActivity {
         winOrLoseResultTextview.setText(R.string.you_win_message);
         winOrLoseResultTextview.setVisibility(View.VISIBLE);
     }
-
-
-
 }

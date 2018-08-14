@@ -3,9 +3,6 @@ package com.example.alexandrareinhart.guessinggame;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.method.KeyListener;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,27 +21,19 @@ public class MainActivity extends AppCompatActivity {
         directions = findViewById(R.id.directions_textview);
 
         startListener();
-        //set a listener. at all times, device needs to be listening for input, i.e. tap, touch, tilt, etc. must set listener/s AS SOON AS app has started.
-
     }
 
-    private void startListener(){
-
+    private void startListener() {
         startButton.setOnClickListener(new View.OnClickListener() { //OnClickListener is a class built in to Android
             @Override
             public void onClick(View v) {
                 startGame();
             }
         });
-
-        //directions.SOMETHING
     }
 
-    private void startGame(){
-        Intent playGame = new Intent(this, GameActivity.class); //this class needs to change from what it is to the game class. it still
-        //doesn't know what it needs to do until I tell it what my intent to do is.
-        //PUTTING EXTRAS - have to tell what or where, and give value
-//        playGame.putExtra("SETWHICHVIEW", 3);
+    private void startGame() {
+        Intent playGame = new Intent(this, GameActivity.class);
         startActivity(playGame);
         GameActivity gameActivity = new GameActivity();
     }
